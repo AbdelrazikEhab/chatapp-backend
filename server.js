@@ -36,7 +36,7 @@ const allowedOrigins = [
   "http://localhost:3000",
   "https://chatapp-frontend-o9ulkn3yb-abdelrazikehabs-projects.vercel.app",
 ]; 
-
+  
 app.use(
   cors({
     origin: function (origin, callback) {
