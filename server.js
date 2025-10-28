@@ -35,7 +35,7 @@ const PUBLIC_DIR = path.join(__dirname, "public");
 const allowedOrigins = [
   "http://localhost:3000",
   "https://chatapp-frontend-o9ulkn3yb-abdelrazikehabs-projects.vercel.app",
-];
+]; 
 
 app.use(
   cors({
