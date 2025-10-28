@@ -32,9 +32,21 @@ const PORT = process.env.PORT || 3000;
 const PUBLIC_DIR = path.join(__dirname, "public");
 
 // ---------- Middleware ----------
+const allowedOrigins = [
+  "http://localhost:3001",
+  "https://chatapp-frontend-o9ulkn3yb-abdelrazikehabs-projects.vercel.app",
+];
+
 app.use(
   cors({
-    origin: "http://localhost:3001", // frontend URL
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+    methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
 );
