@@ -33,7 +33,7 @@ const PUBLIC_DIR = path.join(__dirname, "public");
 
 // ---------- Middleware ----------
 const allowedOrigins = [
-  "http://localhost:3001",
+  "http://localhost:3000",
   "https://chatapp-frontend-o9ulkn3yb-abdelrazikehabs-projects.vercel.app",
 ];
 
