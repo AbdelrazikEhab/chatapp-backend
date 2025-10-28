@@ -10,8 +10,7 @@ const pool = new Pool({
 });
 
 const openai = new OpenAI({
-  apiKey:
-  process.env.OPENAI_API_KEY,
+  apiKey: process.env.OPENAI_API_KEY,
 });
 
 router.get("/:conversationId", async (req, res) => {
@@ -24,7 +23,9 @@ router.get("/:conversationId", async (req, res) => {
     );
 
     if (messages.length === 0) {
-      return res.status(404).json({ error: "No messages found for this conversation." });
+      return res
+        .status(404)
+        .json({ error: "No messages found for this conversation." });
     }
 
     const conversationText = messages
@@ -53,9 +54,10 @@ ${conversationText}
     res.json({ insights: content });
   } catch (err) {
     console.error("AI Insights Error:", err);
-    res.status(500).json({ error: "AI Insights generation failed", details: err.message });
+    res
+      .status(500)
+      .json({ error: "AI Insights generation failed", details: err.message });
   }
 });
-
 
 export default router;
